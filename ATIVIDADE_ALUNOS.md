@@ -79,14 +79,14 @@ ip addr
 
 ```bash
 apk update
-apk add python3 py3-pip git nginx curl
+apk add nano python3 py3-pip git nginx curl
 ```
 
 ## Pacotes da VM-DB
 
 ```bash
 apk update
-apk add mariadb mariadb-client
+apk add nano mariadb mariadb-client
 ```
 
 Depois da instalação, desligue a VM e altere a interface no Proxmox de `vmbr0` para `vmbr1`.
