@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Chamados — ChamadosLab{% endblock %}
+{% block content %}
+<section class="topo">
+    <div>
+        <h2>Chamados</h2>
+        <p>Registros persistidos no banco de dados.</p>
+    </div>
+    <a class="botao" href="{{ url_for('novo_chamado') }}">Abrir chamado</a>
+</section>
+
+{% if chamados %}
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Solicitante</th>
+            <th>Status</th>
+            <th>Criado em</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for chamado in chamados %}
+        <tr>
+            <td>{{ chamado.id }}</td>
+            <td><a href="{{ url_for('detalhe', chamado_id=chamado.id) }}">{{ chamado.titulo }}</a></td>
+            <td>{{ chamado.solicitante }}</td>
+            <td><span class="status">{{ chamado.status }}</span></td>
+            <td>{{ chamado.criado_em }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Nenhum chamado cadastrado.</p>
+{% endif %}
+{% endblock %}

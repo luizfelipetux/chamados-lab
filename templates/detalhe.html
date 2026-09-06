@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Chamado #{{ chamado.id }} — ChamadosLab{% endblock %}
+{% block content %}
+<h2>Chamado #{{ chamado.id }}</h2>
+
+<dl>
+    <dt>Título</dt>
+    <dd>{{ chamado.titulo }}</dd>
+
+    <dt>Solicitante</dt>
+    <dd>{{ chamado.solicitante }}</dd>
+
+    <dt>Status</dt>
+    <dd>{{ chamado.status }}</dd>
+
+    <dt>Descrição</dt>
+    <dd>{{ chamado.descricao }}</dd>
+
+    <dt>Criado em</dt>
+    <dd>{{ chamado.criado_em }}</dd>
+
+    <dt>Atualizado em</dt>
+    <dd>{{ chamado.atualizado_em }}</dd>
+</dl>
+
+<form method="post" action="{{ url_for('atualizar_status', chamado_id=chamado.id) }}">
+    <label>Novo status
+        <select name="status">
+            {% for status in ["Aberto", "Em andamento", "Concluído"] %}
+            <option value="{{ status }}" {% if chamado.status == status %}selected{% endif %}>{{ status }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <button type="submit">Atualizar status</button>
+</form>
+{% endblock %}

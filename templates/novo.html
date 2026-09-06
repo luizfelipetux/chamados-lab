@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Novo chamado — ChamadosLab{% endblock %}
+{% block content %}
+<h2>Abrir chamado</h2>
+
+{% if erro %}
+<div class="erro">{{ erro }}</div>
+{% endif %}
+
+<form method="post">
+    <label>Título
+        <input type="text" name="titulo" maxlength="120"
+               value="{{ dados.get('titulo', '') }}" required>
+    </label>
+
+    <label>Solicitante
+        <input type="text" name="solicitante" maxlength="100"
+               value="{{ dados.get('solicitante', '') }}" required>
+    </label>
+
+    <label>Descrição
+        <textarea name="descricao" rows="6" required>{{ dados.get('descricao', '') }}</textarea>
+    </label>
+
+    <button type="submit">Cadastrar</button>
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}ChamadosLab{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h1><a href="{{ url_for('index') }}">ChamadosLab</a></h1>
+    <nav><a href="{{ url_for('novo_chamado') }}">Novo chamado</a></nav>
+</header>
+<main>
+    {% block content %}{% endblock %}
+</main>
+<footer>Aplicação didática para laboratório de deployment.</footer>
+</body>
+</html>
