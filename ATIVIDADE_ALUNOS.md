@@ -37,14 +37,14 @@ Antes de abrir o Proxmox, responda:
 Produza:
 
 ### A. Diagrama da arquitetura
+Pode ser feito utilizando o: https://app.diagrams.net/
 
-Não use ainda o diagrama do professor. Represente:
+Represente:
 
 - usuário;
 - camada web;
 - camada de dados;
-- protocolos/portas;
-- direção das comunicações.
+- protocolos/portas.
 
 ### B. Inventário proposto
 
@@ -52,12 +52,6 @@ Não use ainda o diagrama do professor. Represente:
 |---|---|---:|---:|---:|---|
 | | | | | | |
 | | | | | | |
-
-### C. Matriz de comunicação
-
-| Origem | Destino | Porta | Motivo |
-|---|---|---:|---|
-| | | | |
 
 ---
 
