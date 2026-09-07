@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, redirect, url_for, abort
 app = Flask(__name__)
 
 DB_CONFIG = {
-    "host": os.getenv("DB_HOST", "192.168.56.20"),
+    "host": os.getenv("DB_HOST", "192.168.56.200"),
     "port": int(os.getenv("DB_PORT", "3306")),
     "user": os.getenv("DB_USER", "chamados_app"),
     "password": os.getenv("DB_PASSWORD", ""),
