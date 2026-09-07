@@ -1,4 +1,7 @@
-# Atividade prática — Deploy profissional com Proxmox
+# Atividade prática — Deploy profissional com Proxmox 
+<img width="250" height="150" alt="image" src="https://github.com/user-attachments/assets/fafcc880-30f9-49a2-ab63-33663add7636" />
+
+
 
 ## Objetivo central
 
