@@ -1,8 +1,6 @@
 # Instalação do Alpine Linux Virtual x86_64 no Proxmox VE
 
-## Objetivo
-
-Este roteiro descreve a instalação do **Alpine Linux – edição Virtual x86_64** em uma máquina virtual criada no **Proxmox VE**.
+Roteiro de instalação do **Alpine Linux – edição Virtual x86_64** em uma máquina virtual criada no **Proxmox VE**.
 
 A edição **Virtual** é adequada para este laboratório por ser pequena e voltada à execução em ambientes virtualizados.
 
