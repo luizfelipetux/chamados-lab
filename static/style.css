@@ -1,46 +1,316 @@
-body {
-    font-family: system-ui, sans-serif;
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    background: #f6f7f9;
-    color: #20242a;
+/* =========================
+   ChamadosLab - estilo geral
+   ========================= */
+{
+    box-sizing: border-box;
 }
+
+body {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+    background: #f4f6f8;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* =========================
+   Cabeçalho
+   ========================= */
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 0;
+    padding: 1.5rem 0;
 }
-header a { text-decoration: none; color: inherit; }
+
+header h1 {
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+header h1 a {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+header nav a {
+    color: #374151;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.55rem 0.9rem;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+header nav a:hover {
+    background: #e5e7eb;
+}
+
+
+/* =========================
+   Conteúdo principal
+   ========================= */
+
 main {
-    background: white;
-    padding: 1.4rem;
-    border-radius: 10px;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 6px 18px rgba(0, 0, 0, 0.05);
 }
+
+/* =========================
+   Títulos
+   ========================= */
+h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #111827;
+}
+p {
+    color: #4b5563;
+}
+
+/* =========================
+   Área superior das páginas
+   ========================= */
 .topo {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
-table { width: 100%; border-collapse: collapse; }
-th, td { text-align: left; padding: .7rem; border-bottom: 1px solid #ddd; }
-label { display: block; margin: 1rem 0; }
-input, textarea, select {
-    width: 100%;
-    box-sizing: border-box;
-    padding: .65rem;
-    margin-top: .35rem;
-}
-button, .botao {
+
+/* =========================
+   Botões
+   ========================= */
+button,
+.botao {
     display: inline-block;
-    padding: .65rem 1rem;
-    border: 0;
-    border-radius: 6px;
+    padding: 0.65rem 1rem;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
     cursor: pointer;
     text-decoration: none;
+    transition:
+        background 0.2s,
+        transform 0.1s;
 }
-.erro { padding: .7rem; border: 1px solid #aaa; }
-dt { font-weight: 700; margin-top: .8rem; }
-dd { margin-left: 0; }
-footer { padding: 1.5rem 0; font-size: .9rem; }
+
+button:hover,
+.botao:hover {
+    background: #1d4ed8;
+}
+
+button:active,
+.botao:active {
+    transform: translateY(1px);
+}
+
+/* =========================
+   Tabela de chamados
+   ========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background: #f3f4f6;
+}
+
+th {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #4b5563;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr {
+    transition: background 0.15s;
+}
+
+tbody tr:hover {
+    background: #f9fafb;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+td a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   Status
+   ========================= */
+
+.status {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    background: #e0e7ff;
+    color: #3730a3;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+/* =========================
+   Formulários
+   ========================= */
+
+form {
+    max-width: 700px;
+}
+
+label {
+    display: block;
+    margin: 1.2rem 0;
+    color: #374151;
+    font-weight: 600;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    margin-top: 0.4rem;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    background: white;
+    color: #111827;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition:
+        border 0.2s,
+        box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* =========================
+   Mensagem de erro
+   ========================= */
+
+.erro {
+    padding: 0.8rem 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid #dc2626;
+    background: #fef2f2;
+    color: #991b1b;
+    border-radius: 6px;
+}
+
+
+/* =========================
+   Detalhes do chamado
+   ========================= */
+
+dl {
+    margin-top: 1.5rem;
+}
+
+dt {
+    margin-top: 1rem;
+
+    color: #6b7280;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+dd {
+    margin-left: 0;
+    margin-top: 0.2rem;
+    color: #111827;
+}
+
+
+/* =========================
+   Rodapé
+   ========================= */
+
+footer {
+    padding: 1.8rem 0;
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+/* =========================
+   Responsividade
+   ========================= */
+
+@media (max-width: 700px) {
+    body {
+        padding: 0 0.8rem;
+    }
+
+    header {
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    main {
+        padding: 1.2rem;
+    }
+
+    .topo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    th,
+    td {
+        white-space: nowrap;
+    }
+}
