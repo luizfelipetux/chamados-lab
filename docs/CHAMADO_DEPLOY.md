@@ -17,7 +17,6 @@ Precisamos disponibilizar a aplicação para aproximadamente 30 usuários intern
 - os dados devem persistir;
 - somente a aplicação deve possuir credencial para o banco;
 - credenciais devem ser fornecidas por variáveis de ambiente;
-- a aplicação e a camada de dados devem poder ser mantidas/reiniciadas independentemente;
 - o usuário final não deve utilizar o banco diretamente;
 - o ambiente possui recursos computacionais limitados.
 
