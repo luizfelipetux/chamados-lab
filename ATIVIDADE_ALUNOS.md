@@ -148,6 +148,10 @@ mariadb-install-db --user=mysql --datadir=/var/lib/mysql
 rc-service mariadb start
 rc-update add mariadb default
 ```
+Edite o arquivo de conf do MariaDB, adicione # na frente da linha "skip-networking":
+```bash
+nano /etc/my.cnf.d/mariadb-server.cnf
+```
 
 Verifique:
 
