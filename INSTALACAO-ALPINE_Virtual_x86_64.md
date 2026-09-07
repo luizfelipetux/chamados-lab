@@ -650,13 +650,16 @@ apk update
 ## VM-WEB
 
 ```bash
-apk add python3 py3-pip git nginx curl
+apk add nano python3 py3-pip git nginx curl
+cd /opt
+git clone URL_DO_REPOSITORIO chamados-lab
 ```
 
 ## VM-DB
 
 ```bash
-apk add mariadb mariadb-client
+apk add nano mariadb mariadb-client
+wget https://raw.githubusercontent.com/luizfelipetux/chamados-lab/refs/heads/main/sql/schema.sql
 ```
 
 ---
