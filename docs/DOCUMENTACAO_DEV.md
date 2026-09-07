@@ -26,8 +26,7 @@
 - **RNF04 — Persistência:** os chamados deverão permanecer armazenados após reinício da aplicação.
 - **RNF05 — Segurança:** o banco não deverá ser utilizado diretamente pelos usuários finais; a credencial da aplicação deverá ser restrita ao host da camada web.
 - **RNF06 — Segredos:** usuário e senha do banco não deverão ficar gravados no código-fonte.
-- **RNF07 — Manutenção:** aplicação e camada de dados deverão poder ser reiniciadas/manutenidas independentemente.
-- **RNF08 — Capacidade:** a infraestrutura inicial deverá privilegiar baixo consumo, mas permitir revisão de sizing caso a quantidade de usuários aumente.
+- **RNF07 — Capacidade:** a infraestrutura inicial deverá privilegiar baixo consumo, mas permitir revisão de sizing caso a quantidade de usuários aumente.
 
 ## 4. Dependências
 
