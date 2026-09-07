@@ -97,8 +97,8 @@ Depois da instalação, desligue a VM e altere a interface no Proxmox de `vmbr0`
 
 Planejamento recomendado após a discussão coletiva:
 
-- VM-WEB: `192.168.56.10/24`
-- VM-DB: `192.168.56.20/24`
+- VM-WEB: `192.168.56.150/24`
+- VM-DB: `192.168.56.200/24`
 
 Na rede Host-Only não é necessário gateway para a comunicação local.
 
@@ -112,10 +112,10 @@ iface lo inet loopback
 
 auto eth0
 iface eth0 inet static
-    address 192.168.56.10/24
+    address 192.168.56.150/24
 ```
 
-Para VM-DB, altere o endereço para `192.168.56.20/24`.
+Para VM-DB, altere o endereço para `192.168.56.200/24`.
 
 Reinicie a rede:
 
@@ -128,13 +128,13 @@ Teste:
 ```bash
 ip addr
 ip route
-ping -c 3 192.168.56.20
+ping -c 3 192.168.56.200
 ```
 
 Na VM-DB, teste o caminho inverso:
 
 ```bash
-ping -c 3 192.168.56.10
+ping -c 3 192.168.56.150
 ```
 
 ---
@@ -163,7 +163,7 @@ ss -lntp | grep 3306
 Configure o MariaDB para ouvir no endereço da VM-DB. Localize/edite a configuração do servidor em `/etc/my.cnf.d/` e defina na seção `[mysqld]`:
 
 ```text
-bind-address=192.168.56.20
+bind-address=192.168.56.200
 ```
 
 Reinicie:
@@ -183,12 +183,12 @@ Ou copie e execute o conteúdo de `sql/schema.sql`.
 Depois acesse o MariaDB como administrador e crie o usuário da aplicação:
 
 ```sql
-CREATE USER 'chamados_app'@'192.168.56.10'
+CREATE USER 'chamados_app'@'192.168.56.150'
 IDENTIFIED BY 'LabSO@2026';
 
 GRANT SELECT, INSERT, UPDATE
 ON chamados.*
-TO 'chamados_app'@'192.168.56.10';
+TO 'chamados_app'@'192.168.56.150';
 
 FLUSH PRIVILEGES;
 ```
@@ -220,7 +220,7 @@ Se o comando `venv` não estiver disponível na versão do Alpine usada no labor
 Defina as variáveis da aplicação:
 
 ```bash
-export DB_HOST=192.168.56.20
+export DB_HOST=192.168.56.200
 export DB_PORT=3306
 export DB_NAME=chamados
 export DB_USER=chamados_app
@@ -244,13 +244,13 @@ curl http://127.0.0.1:8000/health
 Teste do Linux Mint:
 
 ```bash
-curl http://192.168.56.10:8000/health
+curl http://192.168.56.150:8000/health
 ```
 
 Acesse no navegador:
 
 ```text
-http://192.168.56.10:8000
+http://192.168.56.150:8000
 ```
 
 Cadastre um chamado.
@@ -288,13 +288,13 @@ Navegador -> TCP/80 -> Nginx -> TCP/8000 -> Flask -> TCP/3306 -> MariaDB
 Teste:
 
 ```bash
-curl http://192.168.56.10/health
+curl http://192.168.56.150/health
 ```
 
 Acesse no navegador:
 
 ```text
-http://192.168.56.10
+http://192.168.56.150
 ```
 
 ---
