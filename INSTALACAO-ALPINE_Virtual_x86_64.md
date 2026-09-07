@@ -643,12 +643,6 @@ Execute:
 apk update
 ```
 
-Opcionalmente:
-
-```bash
-apk upgrade
-```
-
 ---
 
 # 31. Instalar os pacotes da atividade
@@ -737,7 +731,7 @@ iface lo inet loopback
 
 auto eth0
 iface eth0 inet static
-    address 192.168.56.10/24
+    address 192.168.56.150/24
 ```
 
 ## VM-DB
@@ -748,7 +742,7 @@ iface lo inet loopback
 
 auto eth0
 iface eth0 inet static
-    address 192.168.56.20/24
+    address 192.168.56.200/24
 ```
 
 > Substitua `eth0` caso a interface possua outro nome.
@@ -767,20 +761,20 @@ rc-service networking restart
 
 ```bash
 ip addr
-ping -c 3 192.168.56.20
+ping -c 3 192.168.56.200
 ```
 
 ## Na VM-DB
 
 ```bash
-ping -c 3 192.168.56.10
+ping -c 3 192.168.56.150
 ```
 
 ## No Linux Mint do laboratório
 
 ```bash
-ping -c 3 192.168.56.10
-ping -c 3 192.168.56.20
+ping -c 3 192.168.56.150
+ping -c 3 192.168.56.200
 ```
 
 ---
@@ -816,24 +810,5 @@ ping -c 3 192.168.56.20
 
 ---
 
-# Arquitetura após a instalação
-
-```text
-                     Linux Mint
-                 192.168.56.1
-                        |
-                    Host-Only
-                 192.168.56.0/24
-                        |
-                     vmbr1
-                   /       \
-                  /         \
-                 v           v
-        +-------------+   +-------------+
-        |   VM-WEB    |   |    VM-DB    |
-        | Alpine      |   | Alpine      |
-        | .56.10      |   | .56.20      |
-        +-------------+   +-------------+
-```
 
 Após esta etapa, as máquinas estão prontas para a instalação e configuração dos serviços da atividade de deployment.
