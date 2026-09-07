@@ -78,6 +78,8 @@ ip addr
 ```bash
 apk update
 apk add nano python3 py3-pip git nginx curl
+cd /opt
+git clone URL_DO_REPOSITORIO chamados-lab
 ```
 
 ## Pacotes e conteúdo da VM-DB
@@ -205,7 +207,6 @@ Na VM-WEB:
 
 ```bash
 cd /opt
-git clone URL_DO_REPOSITORIO chamados-lab
 cd chamados-lab
 ```
 
