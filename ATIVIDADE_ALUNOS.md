@@ -80,11 +80,12 @@ apk update
 apk add nano python3 py3-pip git nginx curl
 ```
 
-## Pacotes da VM-DB
+## Pacotes e conteúdo da VM-DB
 
 ```bash
 apk update
 apk add nano mariadb mariadb-client
+wget https://raw.githubusercontent.com/luizfelipetux/chamados-lab/refs/heads/main/sql/schema.sql
 ```
 
 Depois da instalação, desligue a VM e altere a interface no Proxmox de `vmbr0` para `vmbr1`.
@@ -173,12 +174,15 @@ rc-service mariadb restart
 Crie a estrutura:
 
 ```bash
-mariadb < /caminho/para/schema.sql
+mariadb < /root/schema.sql
 ```
 
 Ou copie e execute o conteúdo de `sql/schema.sql`.
 
 Depois acesse o MariaDB como administrador e crie o usuário da aplicação:
+```bash
+mariadb -u root -p
+```
 
 ```sql
 CREATE USER 'chamados_app'@'192.168.56.150'
