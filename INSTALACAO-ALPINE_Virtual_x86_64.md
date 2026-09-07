@@ -118,7 +118,7 @@ Linux
 Versão:
 
 ```text
-6.x - 2.6 Kernel
+7.x - 2.6 Kernel
 ```
 
 ou a opção Linux equivalente apresentada pela versão do Proxmox utilizada no laboratório.
@@ -177,7 +177,7 @@ Sugestão:
 Sugestão:
 
 ```text
-6 GB
+4 GB
 ```
 
 Para o controlador de disco, utilize preferencialmente:
@@ -354,11 +354,8 @@ br
 Depois selecione o mapa correspondente, normalmente:
 
 ```text
-br-abnt2
+br
 ```
-
-Se o laboratório utilizar teclado americano, escolha a configuração adequada ao equipamento.
-
 ---
 
 # 14. Definir o hostname
@@ -433,7 +430,7 @@ Quando solicitado, utilize:
 America/Recife
 ```
 
-ou outro fuso adequado ao local do laboratório.
+ou outro fuso adequado ao local do laboratório (UTC).
 
 ---
 
@@ -445,7 +442,7 @@ Quando aparecer:
 HTTP/FTP proxy URL?
 ```
 
-caso o laboratório não utilize proxy, pressione:
+como o laboratório não utiliza proxy, pressione:
 
 ```text
 Enter
@@ -498,13 +495,6 @@ O disco virtual normalmente aparecerá como:
 ```text
 sda
 ```
-
-ou:
-
-```text
-vda
-```
-
 Selecione o disco correspondente à VM.
 
 ---
