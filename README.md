@@ -1,6 +1,6 @@
 # ChamadosLab
 
-Aplicação didática entregue pela equipe DEV para implantação em ambiente Linux.
+Aplicação entregue pela equipe DEV para implantação em ambiente Linux.
 
 ## Visão geral
 
