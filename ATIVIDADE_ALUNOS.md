@@ -11,7 +11,6 @@ O foco não é "criar duas VMs", mas justificar a arquitetura, provisionar os re
 ## Organização
 
 - Trabalho em duplas.
-- Dois encontros de 2 aulas de 50 minutos.
 - Pequena complementação poderá ser entregue após o segundo encontro.
 
 ---
