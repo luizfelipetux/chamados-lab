@@ -59,6 +59,8 @@ Represente:
 
 Após validação do professor, crie as VMs no Proxmox.
 
+Use a imagem iso VIRTUAL x86_64 do Alpine.
+
 Use temporariamente a `vmbr0` para obter Internet e instalar pacotes.
 
 Identifique a interface de rede dentro de cada Alpine:
