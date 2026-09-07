@@ -259,7 +259,7 @@ Cadastre um chamado.
 
 ---
 
-# ETAPA 6 — Nginx como reverse proxy
+# ETAPA 6 (Aguarde instrução do Professor..)— Nginx como reverse proxy
 
 Pare a aplicação e altere:
 
@@ -368,5 +368,4 @@ A dupla deverá entregar:
 3. Que vantagens e desvantagens existiriam se aplicação e banco estivessem na mesma VM?
 4. A aplicação passou de 30 para 3.000 usuários. O que você precisa medir antes de simplesmente aumentar CPU e RAM?
 5. Quais informações a equipe DEV deve fornecer para que a INFRA/OPS consiga implantar um sistema?
-6. Qual é a função do Nginx e qual é a função do Flask neste ambiente?
-7. Por que as credenciais não devem ser gravadas em `app.py`?
+6. Por que as credenciais não devem ser gravadas em `app.py`?
